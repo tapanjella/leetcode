@@ -28,23 +28,22 @@ Example 5:
 Input: "{[]}"
 Output: true
 '''
-
-    def isValid(self, s: str) -> bool:
-        stack=[]
-        for ch in s:
-            if ch in ["(","{","["]:
-                stack.append(ch)
-            else:
-                if not stack:
+def isValid(self, s: str) -> bool:
+    stack=[]
+    for ch in s:
+        if ch in ["(","{","["]:
+            stack.append(ch)
+        else:
+            if not stack:
+                return False
+            if ch==")":
+                if stack.pop()!="(":
                     return False
-                if ch==")":
-                    if stack.pop()!="(":
-                        return False
-                if ch=="}":
-                    if stack.pop()!="{":
-                        return False
-                if ch=="]":
-                    if stack.pop()!="[":
-                        return False
-        if not stack:
-            return True
+            if ch=="}":
+                if stack.pop()!="{":
+                    return False
+            if ch=="]":
+                if stack.pop()!="[":
+                    return False
+    if not stack:
+        return True
