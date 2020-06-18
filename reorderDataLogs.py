@@ -42,7 +42,7 @@ def reorderLogFiles(self, logs: List[str]) -> List[str]:
   print(ll)
 
 
-  ll = [" ".join(i) for i in sorted(ll, key = lambda x: x[1:])]
+  ll = [" ".join(i) for i in sorted(ll, key = lambda x: x[1:]+[x[0]])]
 
 
 
