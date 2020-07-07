@@ -10,14 +10,14 @@ Given nums = [2, 7, 11, 15], target = 9,
 Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1]
 '''
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        list1 = []
-        dict1 = {} # mapping element to its index ele:index
-        for index,ele in enumerate(nums):
-            val = target - ele
-            if val in dict1:
-                list1.append(index)
-                list1.append(dict1[val])
-                return list1
-            else:
-                dict1[ele] = index
+def twoSum(self, nums: List[int], target: int) -> List[int]:
+    list1 = []
+    dict1 = {} # mapping element to its index ele:index
+    for index,ele in enumerate(nums):
+        val = target - ele
+        if val in dict1:
+            list1.append(index)
+            list1.append(dict1[val])
+            return list1
+        else:
+            dict1[ele] = index
