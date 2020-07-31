@@ -18,14 +18,14 @@ Output: 0
 Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
 '''
-    def maxProfit(self, prices: List[int]) -> int:
-        if len(prices) == 0:
-            return 0
-        max_now = 0
-        min_now = prices[0]
-        for i in range(1,len(prices)):
-            if prices[i]<min_now:
-                min_now = prices[i]
-            else:
-                max_now = max(max_now,prices[i]-min_now)
-        return max_now
+def maxProfit(self, prices: List[int]) -> int:
+    if len(prices) == 0:
+        return 0
+    max_now = 0
+    min_now = prices[0]
+    for i in range(1,len(prices)):
+        if prices[i]<min_now:
+            min_now = prices[i]
+        else:
+            max_now = max(max_now,prices[i]-min_now)
+    return max_now
