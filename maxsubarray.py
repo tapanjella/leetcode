@@ -10,9 +10,9 @@ Follow up:
 
 If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle
 '''
-    def maxSubArray(self, nums: List[int]) -> int:
-        total_sum = max_yet = nums[0]
-        for i in nums[1:]:
-            total_sum = max((total_sum + i),i) 
-            max_yet = max(total_sum, max_yet)
-        return max_yet
+def maxSubArray(self, nums: List[int]) -> int:
+    total_sum = max_yet = nums[0]
+    for i in nums[1:]:
+        total_sum = max((total_sum + i),i) 
+        max_yet = max(total_sum, max_yet)
+    return max_yet
