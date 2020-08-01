@@ -23,27 +23,27 @@ Explanation: The first three characters "app" match, and the second string is sh
 
 '''
 
-    def isAlienSorted(self, words: List[str], order: str) -> bool:
-        orderdict = {}
-        for i,ch in enumerate(order):
-            orderdict[ch] = i
-        #print(orderdict)
-        for i in range(len(words)-1):
-            #Using transitive property and comparing only 2 words at a time
-            #The words are sorted lexicographically 
-            #if and only if adjacent words are.
-            #This is because order is transitive: a <= b and b <= c implies a <= c.
-            w1 = words[i] #w1 = "hello"
-            w2 = words[i+1] #w2 = "leetcode"
-            #looping over the min of words to not go out of range
-            for j in range(min(len(w1),len(w2))):
-                if w1[j] != w2[j]:
-                    if (orderdict[w1[j]] > orderdict[w2[j]]):
-                        return False
-                    break
-            else:
-                #We are using this else block for "for loop"
-                #this can only be done in python
-                if len(w1) > len(w2):
+def isAlienSorted(self, words: List[str], order: str) -> bool:
+    orderdict = {}
+    for i,ch in enumerate(order):
+        orderdict[ch] = i
+    #print(orderdict)
+    for i in range(len(words)-1):
+        #Using transitive property and comparing only 2 words at a time
+        #The words are sorted lexicographically 
+        #if and only if adjacent words are.
+        #This is because order is transitive: a <= b and b <= c implies a <= c.
+        w1 = words[i] #w1 = "hello"
+        w2 = words[i+1] #w2 = "leetcode"
+        #looping over the min of words to not go out of range
+        for j in range(min(len(w1),len(w2))):
+            if w1[j] != w2[j]:
+                if (orderdict[w1[j]] > orderdict[w2[j]]):
                     return False
-        return True
+                break
+        else:
+            #We are using this else block for "for loop"
+            #this can only be done in python
+            if len(w1) > len(w2):
+                return False
+    return True
