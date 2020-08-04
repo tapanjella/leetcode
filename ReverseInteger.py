@@ -18,20 +18,20 @@ Assume we are dealing with an environment which could only store integers within
 
 '''
 
-    def reverse(self, x: int) -> int:
-        negative = False
-        if  x < 0:
-            negative = True
-            x = (-1)*x
-        rev = 0 
-        while x != 0:
-            rev = (10*rev) + x%10
-            x = x//10
-        
-        if rev >= (-1)*(2**31) and rev <= (2**31):
-            if negative:
-                return (-1)*rev
-            else:
-                return rev
+def reverse(self, x: int) -> int:
+    negative = False
+    if  x < 0:
+        negative = True
+        x = (-1)*x
+    rev = 0 
+    while x != 0:
+        rev = (10*rev) + x%10
+        x = x//10
+
+    if rev >= (-1)*(2**31) and rev <= (2**31):
+        if negative:
+            return (-1)*rev
         else:
-            return 0
+            return rev
+    else:
+        return 0
