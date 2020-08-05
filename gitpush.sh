@@ -10,8 +10,10 @@ git commit -m "$commitMessage"
 echo 'Enter the name of the branch:'
 read branch
 
-git pull $branch
+git pull 
 
 git push origin $branch
 
 read
+
+exit
