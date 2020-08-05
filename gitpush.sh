@@ -14,6 +14,4 @@ git pull
 
 git push origin $branch
 
-read
-
 exit 0
