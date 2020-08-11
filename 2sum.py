@@ -21,3 +21,4 @@ def twoSum(self, nums: List[int], target: int) -> List[int]:
             return list1
         else:
             dict1[ele] = index
+
