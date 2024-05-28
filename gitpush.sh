@@ -1,5 +1,7 @@
 #Simple script to automate the process of git add, commit, push
 
+set -x # To Enable Debug mode while the script execute
+
 git add .
 
 echo 'Enter the commit message:'
